@@ -11,7 +11,7 @@ Tech stack:
 
 Demo url:
 ```
-https://mtt-rtc-test.herokuapp.com/?meetingRoom=M1
+https://mrtcdemo.herokuapp.com/?meetingRoom=M1
 ```
 
 ```
