@@ -1,0 +1,315 @@
+* {
+	box-sizing: border-box;
+  }
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #000000;
+}
+
+
+
+.btnUnpin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('/unpin.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    border: none;
+}
+
+.btnPin {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 24px;
+    height: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    background-image: url('/pin.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    border: none;
+}
+
+#capturedPhotoListWrapper {
+    width: 100%;
+    height: 140px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: visible;
+    white-space: nowrap;
+}
+
+#capturedPhotoList {
+    height: 140px;
+    display: inline-block;
+}
+
+
+/** Controls **/
+#myControlWrapper {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#myControl {
+    width: 120px;
+    padding: 10px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+    #myControl:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    }
+
+#close_window {
+    background-color: #fff;
+    background-image: url('/close.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #ddd;
+    border-radius: 100px;
+    height: 40px;
+    width: 80px;
+    -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+}
+
+#hang_up{
+    background-color: #fff;
+    background-image: url('/phone_red.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #ddd;
+    border-radius: 100px;
+    height: 40px;
+    width: 80px;
+    -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+}
+
+#more_control {
+    background-color: #fff;
+    background-image: url('/more_control.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #ddd;
+    border-radius: 100px;
+    height: 40px;
+    width: 80px;
+    -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+}
+
+
+#video_control {
+    display: none;
+}
+
+#video_control + label {
+    background-color: #fff;
+    background-image: url('/disable_video.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #ddd;
+    border-radius: 100px;
+    height: 40px;
+    width: 80px;
+    -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+}
+
+#video_control:checked + label {
+    background-color: #fff;
+    background-image: url('/enable_video.svg');
+    background-size: 24px 24px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #eee;
+    border-radius: 100px;
+    height: 40px;
+    width: 80px;
+    -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+}
+
+#mute_control {
+    display: none;
+}
+
+    #mute_control + label {
+        background-color: #fff;
+        background-image: url('/disable_mic.svg');
+        background-size: 24px 24px;
+        display: inline-block;
+        padding: 0 0 0 0px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: solid 1px #eee;
+        border-radius: 100px;
+        height: 40px;
+        width: 80px;
+        -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+        -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+        box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    }
+
+    #mute_control:checked + label {
+        background-color: #fff;
+        background-image: url('/enable_mic.svg');
+        background-size: 24px 24px;
+        display: inline-block;
+        padding: 0 0 0 0px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border: solid 1px #eee;
+        border-radius: 100px;
+        height: 40px;
+        width: 80px;
+        -webkit-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+        -moz-box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+        box-shadow: 10px 10px 26px -18px rgba(77,77,77,1);
+    }
+/** Controls **/
+
+/** Table video layout **/
+
+#videoMediaControlLayout {
+    width: 380px;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+
+/** Video **/
+
+#localVideo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    height: 140px;
+    background: url('/actor.svg') no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    object-fit: cover;
+    border: solid 2px #dddddd;
+}
+
+/** Remote videos layout **/
+#videosContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+}
+
+.children {
+    position: relative;
+    overflow: hidden;
+    transition: 0.5s;
+    float: left;
+    background: rgb(40, 40, 40);
+}
+
+.activeChildren {
+    border: 2px solid #69E781;
+}
+
+.children > video {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #dddddd;
+}
+
+#btnCapture {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+    background: url('/capture.svg') no-repeat;
+    background-position: center;
+    background-size: 30px 30px;
+    border: none;
+    opacity: 0.7;
+    outline: none;
+    z-index: 300;
+}
+
+    #btnCapture:hover {
+        opacity: 0.5;
+    }
+
+    #btnCapture:active {
+        opacity: 1;
+    }
+
+#call_done {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #fff;
+    display: none;
+}
+
+#close_window_wrapper {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    bottom: 100px;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+
+    #videosContainer {
+        width: 100%;
+        height: 100%;
+    }
+}

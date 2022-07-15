@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Tele Medicine</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/style/style.css">
+</head>
+
+<body>
+
+  <div id="videosContainer"></div>
+
+  <table id="videoMediaControlLayout">
+    <tr>
+      <td>
+        <div style="padding-top: 12px;">
+          <input type="checkbox" onchange="videoChange()" id="video_control" checked />
+          <label for="video_control"></label>
+        </div>
+      </td>
+      <td>
+        <div style="padding-top: 12px;">
+          <input type="checkbox" onchange="muteChange()" id="mute_control" checked />
+          <label for="mute_control"></label>
+        </div>
+      </td>
+      <td>
+        <div>
+          <!--
+          <button id="hang_up" onclick="hangUp()"></button>
+          -->
+        </div>
+      </td>
+      <td>
+        <div>
+          <button id="more_control" onclick="moreMenu()"></button>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+
+
+  <video id="localVideo" autoplay muted playsinline></video>
+
+  <!-- Modal -->
+  <div class="modal fade" id="moreMenuModal" tabindex="-1" role="dialog" aria-labelledby="moreMenuModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="moreMenuModalLabel">Options</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+          <div class="select">
+            <label for="videoSource">Video: </label><br><select id="videoSource"></select>
+          </div>
+
+          <div class="select">
+            <label for="audioSource">Audio input: </label><br><select id="audioSource"></select>
+          </div>
+
+          <div class="select">
+            <label for="audioOutput">Audio output: </label><br><select id="audioOutput"></select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="call_done">
+
+    <div style="position: relative; width: 100%; height: 100%;">
+
+      <div id="close_window_wrapper">
+        <h5>Close window</h5>
+        <br />
+        <button id="close_window" onclick="closeWindow()"></button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--<button id="btnCapture" onclick="screenCapture()"></button>-->
+  <!--
+  <div id="myControlWrapper">
+    <div id="myControl">
+      <input type="checkbox" onchange="recordChange()" id="record_control" /> Recored
+      <button onclick="screenCapture()">Capture</button>
+      <span id="captured_count">0</span>
+    </div>
+
+    <div id="capturedPhotoListWrapper">
+      <div id="capturedPhotoList"></div>
+      <div style="clear: both;"></div>
+    </div>
+
+  </div>
+-->
+
+  <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script src="/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/scripts/adapter.js"></script>
+  <!--<script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>-->
+  <script src="/scripts/hark.js"></script>
+  <script src="/scripts/script.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+
+      pageReady();
+
+    });
+  </script>
+
+</body>
+
+</html>
